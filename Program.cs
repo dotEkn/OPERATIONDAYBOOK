@@ -10,6 +10,7 @@ namespace OPERATIONDAYBOOK
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

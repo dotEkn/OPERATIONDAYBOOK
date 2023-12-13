@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace OPERATIONDAYBOOK
 {
-    internal class Title
+    public struct Title
     {
-            //Borttagen mening, Harald finns icke mer.
-            //Hans bror Edwin tog över >:).
+        "Titel?"
+        
+        string[] titles
+        Console.ReadLine();
+
+        public string titleName
     }
 }
