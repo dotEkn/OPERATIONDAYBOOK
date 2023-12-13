@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 namespace OPERATIONDAYBOOK
 {
     public struct Title
-    {
-        "Titel?"
+    {   
         
         string[] titles
+        Console.WriteLine("Titel?");
+        
+     
         Console.ReadLine();
 
         public string titleName
