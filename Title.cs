@@ -8,6 +8,7 @@ namespace OPERATIONDAYBOOK
 {
     internal class Title
     {
-        //hej jag heter harald.
+            //Borttagen mening, Harald finns icke mer.
+            //Hans bror Edwin tog över >:).
     }
 }
