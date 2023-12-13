@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace OPERATIONDAYBOOK
 {
+
+    public class Title
+    {
+            
+
     public struct Title
     {
-        "Titel?"
+        //Titel
         
-        string[] titles
+        string[] titles;
         Console.ReadLine();
 
-        public string titleName
+        public string titleName;
+
     }
 }
