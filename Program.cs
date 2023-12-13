@@ -4,15 +4,17 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static OPERATIONDAYBOOK.Title;
 
 namespace OPERATIONDAYBOOK
 {
-    internal class Program
+    public class Program
     {
+
         
         static void Main(string[] args)
         {
-
+            Meny();
         }
         static void Meny()
         {
@@ -41,15 +43,19 @@ namespace OPERATIONDAYBOOK
 
             }
         }
-        static void Inlägg()
+
+        public static void Inlägg()
         {
-            //
+            Console.WriteLine("Skriv din titel");
+
+            string title = Console.ReadLine();
+            Console.WriteLine(title);
         }
-        static void Sök()
+        public static void Sök()
         {
 
         }
-        static void Radera()
+        public static void Radera()
         {
 
         }

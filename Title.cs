@@ -9,16 +9,11 @@ namespace OPERATIONDAYBOOK
 
     public class Title
     {
-            
 
-    public struct Title
-    {
-        //Titel
-        
-        string[] titles;
-        Console.ReadLine();
 
-        public string titleName;
-
+        public struct Titles
+        {
+            public string titles;
+        }
     }
 }
