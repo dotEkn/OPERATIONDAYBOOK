@@ -8,11 +8,6 @@ namespace OPERATIONDAYBOOK
 {
     public struct Title
     {
-        "Titel?"
         
-        string[] titles
-        Console.ReadLine();
-
-        public string titleName
     }
 }
