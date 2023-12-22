@@ -10,7 +10,9 @@ namespace OPERATIONDAYBOOK
     {
         static void Main(string[] args)
         {
-
+            //Kör menyn när man ska starta programmet.
+            UserMenu userMenu = new UserMenu();
+            userMenu.menuSelect();
         }
     }
 }
