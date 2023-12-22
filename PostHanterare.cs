@@ -18,7 +18,7 @@ namespace OPERATIONDAYBOOK
       /*  savePost(); Denna kommer att ladda filen när programmet startas, om det redan finns sparade inlägg */
       using (StreamWriter writer = new StreamWriter(postSave))
         {
-            foreach (var post in postLista)
+            foreach (var post in postList)
             {
                 writer.WriteLine($"{post.Titel}|{post.postTitle}");
             }
