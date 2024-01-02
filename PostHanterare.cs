@@ -10,7 +10,7 @@ namespace OPERATIONDAYBOOK
 
     public class PostHanterare
     {
-        public PostHanterare postHanterare = new PostHanterare();
+        public static PostHanterare postHanterare = new PostHanterare();
 
         public static List<PostContent> postList = new List<PostContent>();
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.

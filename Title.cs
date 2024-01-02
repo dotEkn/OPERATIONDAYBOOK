@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace OPERATIONDAYBOOK
 {
-    public class TestList
+    public static class TestList
     {
-        public void UseListPC()
+        public static void UseListPC()
         {
             var PCLIST = PostHanterare.postHanterare.GetPostsFromList();
 

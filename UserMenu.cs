@@ -17,10 +17,10 @@ public class UserMenu
 
 		while (true)
 		{
-            Console.WriteLine(" [1] Write a post." +
-                "\n [2] Search for a older post." +
-                "\n [3] Delete an old post." +
-                "\n [4] Exit program.");
+            Console.WriteLine(" [1] Skriv ett inlägg." +
+                "\n [2] Leta efter ett gammalt inlägg." +
+                "\n [3] Radera ett inlägg." +
+                "\n [4] Avsluta program.");
 
             menuSelect = Console.ReadLine();
 
@@ -30,11 +30,11 @@ public class UserMenu
                     {
                 if (!int.TryParse(menuSelect, out menuPick))
                 {
-                    throw new FormatException("Press number 1 to 3 to advance in the menu.");
+                    throw new FormatException("Tryck mellan 1-4 för att avancera i menyn.");
                 }
-                if (menuPick is < 1 or > 3)
+                if (menuPick is < 1 or > 4)
                 {
-                    throw new Exception("Alternative is number 1 to 3");
+                    throw new Exception("Alternativ är mellan 1 till 4.");
                 }
             }
             catch (ArgumentOutOfRangeException wrongMenu)
@@ -65,7 +65,7 @@ public class UserMenu
 
                 case 2:
 
-                    PostHanterare.ShowPost();
+                    TestList.UseListPC();
 
                     break;
 
