@@ -58,8 +58,8 @@ public class UserMenu
             switch (menuPick)
             {
                 case 1:
-                    Console.WriteLine("Adding a new post...");
-                    PostContent.AddPost(); // Använd statisk metod från Post-klassen direkt
+                    
+                    PostContent.AddPost(); // Använder postcontent klassen som tar hand om att lägga till textfil när man trycker på alternativ 1.
                     break;
 
                 case 2:
