@@ -22,7 +22,7 @@ namespace OPERATIONDAYBOOK
         public PostContent(string postTitle, DateTime postDate, string blogPost)
         {
             PostTitle = postTitle;
-            PostDate = postDate;
+            PostDate = postDate.Date;
             BlogPost = blogPost;
         }
 
@@ -31,7 +31,7 @@ namespace OPERATIONDAYBOOK
         {
             Console.WriteLine("Titel:");
             string postTitle = Console.ReadLine();
-
+        
             //whileloop med true som gör att blir det fel så kommer man få nya försök att skriva rätt datum och ej kan lägga in bokstäver.
             bool dateTimeLoop = true;
             while (dateTimeLoop)
@@ -40,22 +40,23 @@ namespace OPERATIONDAYBOOK
                 if (DateTime.TryParse(Console.ReadLine(), out DateTime postDate))
                 {
                     dateTimeLoop = false;
+
+                    Console.WriteLine("Skriv ditt inlägg:");
+                    string blogPost = Console.ReadLine();
+
+                    //Lägger sedan in all info som användaren har skrivit och sparar det i en lista.
+                    PostContent newPost = new PostContent(postTitle, postDate, blogPost);
+                    postList.Add(newPost);
                 }
                 else
                 {
                     Console.WriteLine("Ogiltigt datumformat. Var god försök igen.");
                     dateTimeLoop = true;
                 }
-
-                Console.WriteLine("Skriv ditt inlägg:");
-                string blogPost = Console.ReadLine();
-
-                //Lägger sedan in all info som användaren har skrivit och sparar det i en lista.
-                PostContent newPost = new PostContent(postTitle, postDate, blogPost);
-                postList.Add(newPost);
+                
             }
 
-
+            
 
 
         }
