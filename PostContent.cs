@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 namespace OPERATIONDAYBOOK
 {
 
-    public class Post
+    public class PostContent
     {
         //Sparar inläggen
         public DateTime PostDate { get; set; }
         public string PostTitle { get; set; }
-        public string PostContent { get; set; }
+        public string Content { get; set; }
 
-        public static List<Post> postList = new List<Post>();
+        public static List<PostContent> postList = new List<PostContent>();
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.
 
-        public Post(string postTitle, DateTime postDate)
+        public PostContent(string postTitle, DateTime postDate)
         {
             PostTitle = postTitle;
             PostDate = postDate;
@@ -30,21 +30,34 @@ namespace OPERATIONDAYBOOK
             Console.WriteLine("Titel:");
             string postTitle = Console.ReadLine();
 
-            Console.WriteLine("Enter Datum (MM/DD/YYYY): ");
-            if (DateTime.TryParse(Console.ReadLine(), out DateTime postDate))
+            bool dateTimeLoop = true;
+            while (dateTimeLoop)
             {
-                Post newPost = new Post(postTitle, postDate);
-                postList.Add(newPost);
+                Console.WriteLine("Enter Datum (MM/DD/YYYY): ");
+                if (DateTime.TryParse(Console.ReadLine(), out DateTime postDate))
+                {
+                    PostContent newPost = new PostContent(postTitle, postDate);
+                    postList.Add(newPost);
 
-                Console.WriteLine("Inlägg tillagt!");
+                    Console.WriteLine("´Datum tillagt!");
+                    dateTimeLoop = false;
+                }
+                else
+                {
+                    Console.WriteLine("Ogiltigt datumformat. Var god försök igen.");
+                    dateTimeLoop = true;
+
+                }
             }
-            else
-            {
-                Console.WriteLine("Ogiltigt datumformat. Försök igen.");
-            }
+
+
+
+
         }
-
-
     }
-    
+
+
+
+
+
 }

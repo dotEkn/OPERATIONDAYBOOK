@@ -59,7 +59,7 @@ public class UserMenu
             {
                 case 1:
                     Console.WriteLine("Adding a new post...");
-                    Post.AddPost(); // Använd statisk metod från Post-klassen direkt
+                    PostContent.AddPost(); // Använd statisk metod från Post-klassen direkt
                     break;
 
                 case 2:
