@@ -65,7 +65,7 @@ public class UserMenu
 
                 case 2:
 
-                    TestList.UseListPC();
+                    PostHanterare.ShowPost();
 
                     break;
 
@@ -74,7 +74,7 @@ public class UserMenu
                     break;
 
                 case 4:
-
+                    PostHanterare.SavePostToFile();
                     return;
                 default:
                     break;

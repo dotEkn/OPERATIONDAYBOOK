@@ -12,7 +12,7 @@ namespace OPERATIONDAYBOOK
     {
         public static PostHanterare postHanterare = new PostHanterare();
 
-        public static List<PostContent> postList = new List<PostContent>();
+        public static List<PostContent> postList = PostContent.postList;
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.
 
         public static void ShowPost()
@@ -23,12 +23,12 @@ namespace OPERATIONDAYBOOK
                 return;
             }
             Console.WriteLine("\nAlla inlägg (nyast först): ");
-
+            
             var sortedPost = postList.OrderByDescending(i => i.PostDate);
 
             foreach (var post in sortedPost)
             {
-                Console.WriteLine($"Datum: {post.PostDate}, Titel: {post.PostTitle}, Innehåll: {post.Content}");
+                Console.WriteLine($"Datum: {post.PostDate}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
             }
         }
         public void SavedPost(PostContent content)
@@ -52,11 +52,11 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine("Inlägget kunde inte hittas.");
             }
         }
-        public void SavePostToFile()
+        public static void SavePostToFile()
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter("Post.txt"))
+                using (StreamWriter sw = new StreamWriter(postSave))
                 {
                     foreach (var post in postHanterare.GetPostsFromList())
                     {
