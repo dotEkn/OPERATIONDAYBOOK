@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace OPERATIONDAYBOOK
 {
-    internal class Program
+    public class Program
     {
-        static PostHanterare postHanterare = new PostHanterare();
         
         static void Main(string[] args)
         {
