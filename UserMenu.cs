@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OPERATIONDAYBOOK;
+using System;
 
 public class UserMenu
 {
@@ -25,8 +26,6 @@ public class UserMenu
 
             try
                     {
-
-
                 if (!int.TryParse(menuSelect, out menuPick))
                 {
                     throw new FormatException("Press number 1 to 3 to advance in the menu.");
@@ -53,6 +52,25 @@ public class UserMenu
                 Console.WriteLine($"An unexpected error occurred: {wrongMenu.Message}");
             }
 
+
+            //switch sats som ska t.ex lägga till person om hen trycker på 1.
+            switch (menuPick)
+            {
+                case 1:
+                    PostHanterare savePost = new PostHanterare();
+                    break;
+
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    return;
+
+                default:
+                    break;
+            }
         }
     }
 }
