@@ -10,7 +10,7 @@ namespace OPERATIONDAYBOOK
 
     public class PostHanterare
     {
-        public PostHanterare postHanterare = new PostHanterare();
+        public static PostHanterare postHanterare = new PostHanterare();
 
         public static List<PostContent> postList = new List<PostContent>();
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.
@@ -52,11 +52,11 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine("Inlägget kunde inte hittas.");
             }
         }
-        public void SavePostToFile()
+        public static void SavePostToFile()
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter("Post.txt"))
+                using (StreamWriter sw = new StreamWriter(postSave))
                 {
                     foreach (var post in postHanterare.GetPostsFromList())
                     {
