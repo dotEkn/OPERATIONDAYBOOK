@@ -8,8 +8,9 @@ public class UserMenu
 
 	}
 
-	public void menuSelect()
+    public void menuSelect()
 	{
+
 		//While loop som visar menu, menyn återkommer efter man fullbordat något av alternativen.
 		int menuPick = 0;
 		string menuSelect;
@@ -63,6 +64,8 @@ public class UserMenu
                     break;
 
                 case 2:
+
+                    PostHanterare.ShowPost();
 
                     break;
 
