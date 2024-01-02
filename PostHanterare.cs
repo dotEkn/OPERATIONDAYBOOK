@@ -9,7 +9,7 @@ namespace OPERATIONDAYBOOK
 {
     public class PostHanterare
     {
-        private List<PostContent> listPost = new List<PostContent>();
+        private List<Post> listPost = new List<Post>();
 
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.
 
@@ -29,7 +29,7 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine($"Datum: {post.dateTime}, Titel: {post.postTitle}, Innehåll: {post.Content}");
             }
         }
-        public void SavedPost(PostContent content)
+        public void SavedPost(Post content)
         {
             listPost.Add(content);
         }
