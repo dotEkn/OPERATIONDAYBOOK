@@ -36,7 +36,6 @@ namespace OPERATIONDAYBOOK
             bool dateTimeLoop = true;
             while (dateTimeLoop)
             {
-                
                 Console.WriteLine("Skriv Datum (DD/MM/YYYY): ");
                 if (DateTime.TryParse(Console.ReadLine(), out DateTime postDate))
                 {
