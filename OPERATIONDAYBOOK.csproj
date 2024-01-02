@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Date.cs" />
-    <Compile Include="Post.cs" />
+    <Compile Include="PostContent.cs" />
     <Compile Include="PostHanterare.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

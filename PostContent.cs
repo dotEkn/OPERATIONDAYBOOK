@@ -7,19 +7,11 @@ using System.Threading.Tasks;
 
 namespace OPERATIONDAYBOOK
 {
-    class Post
+    public class PostContent
     {
         //Sparar inläggen
         public DateTime dateTime { get; set; }
         public string postTitle { get; set; }
         public string Content { get; set; }
-
-        public Post (string title, DateTime date, string content)
-        {
-            title = postTitle;
-            dateTime = date;
-            Content = content;
-
-        }
     }
 }

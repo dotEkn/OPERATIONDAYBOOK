@@ -8,7 +8,7 @@ namespace OPERATIONDAYBOOK
 {
     internal class Program
     {
-
+        static PostHanterare postHanterare = new PostHanterare();
         
         static void Main(string[] args)
         {
