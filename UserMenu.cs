@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OPERATIONDAYBOOK;
+using System;
 
 public class UserMenu
 {
@@ -22,8 +23,54 @@ public class UserMenu
 				menuSelect = Console.ReadLine();
 
             //Try catch system som fångar upp om man skulle skriva fel alternativ så kommer man tillbaka och kan göra rätt.
-            
 
+            try
+                    {
+                if (!int.TryParse(menuSelect, out menuPick))
+                {
+                    throw new FormatException("Press number 1 to 3 to advance in the menu.");
+                }
+                if (menuPick is < 1 or > 3)
+                {
+                    throw new Exception("Alternative is number 1 to 3");
+                }
+            }
+            catch (ArgumentOutOfRangeException wrongMenu)
+            {
+                Console.WriteLine($"Error: {wrongMenu.Message}");
+            }
+            catch (ArgumentException wrongMenu)
+            {
+                Console.WriteLine($"Error: {wrongMenu.Message}");
+            }
+            catch (FormatException wrongMenu)
+            {
+                Console.WriteLine($"Error: {wrongMenu.Message}");
+            }
+            catch (Exception wrongMenu)
+            {
+                Console.WriteLine($"An unexpected error occurred: {wrongMenu.Message}");
+            }
+
+
+            //switch sats som ska t.ex lägga till person om hen trycker på 1.
+            switch (menuPick)
+            {
+                case 1:
+                    PostHanterare savePost = new PostHanterare();
+                    break;
+
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    return;
+
+                default:
+                    break;
+            }
         }
     }
 }
