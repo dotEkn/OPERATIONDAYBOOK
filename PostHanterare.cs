@@ -10,22 +10,21 @@ namespace OPERATIONDAYBOOK
 
     public class PostHanterare
     {
-        public static PostHanterare postHanterare = new PostHanterare();
+        public PostHanterare postHanterare = new PostHanterare();
 
-        private List<PostContent> listPost = new List<PostContent>();
-
+        public static List<PostContent> postList = new List<PostContent>();
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.
 
-        public void ShowPost()
+        public static void ShowPost()
         {
-            if (listPost.Count == 0)
+            if (postList.Count == 0)
             {
                 Console.WriteLine("\nInga inlägg att visa.");
                 return;
             }
             Console.WriteLine("\nAlla inlägg (nyast först): ");
 
-            var sortedPost = listPost.OrderByDescending(i => i.PostDate);
+            var sortedPost = postList.OrderByDescending(i => i.PostDate);
 
             foreach (var post in sortedPost)
             {
@@ -34,18 +33,18 @@ namespace OPERATIONDAYBOOK
         }
         public void SavedPost(PostContent content)
         {
-            listPost.Add(content);
+            postList.Add(content);
         }
         public void DeletePost()
         {
             Console.WriteLine("\nAnge titel för inlägget du vill ta bort.");
             string PostDelete = Console.ReadLine();
 
-            var deletePost = listPost.FirstOrDefault(PostContent => PostContent.PostTitle.Equals(PostDelete, StringComparison.OrdinalIgnoreCase));
+            var deletePost = postList.FirstOrDefault(PostContent => PostContent.PostTitle.Equals(PostDelete, StringComparison.OrdinalIgnoreCase));
 
             if (PostDelete != null)
             {
-                listPost.Remove(deletePost);
+                postList.Remove(deletePost);
                 Console.WriteLine("Inlägget har tagits bort.");
             }
             else
@@ -53,7 +52,7 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine("Inlägget kunde inte hittas.");
             }
         }
-        static void SavePostToFile()
+        public void SavePostToFile()
         {
             try
             {
@@ -72,7 +71,7 @@ namespace OPERATIONDAYBOOK
         }
         public List<PostContent> GetPostsFromList()
         {
-            return listPost;
+            return postList;
         }
     }
 }
