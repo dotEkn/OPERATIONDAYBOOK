@@ -1,18 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace OPERATIONDAYBOOK
 {
-    public class Post
+    class Post
     {
         //Sparar inläggen
-        public int dateTime { get; set; }
+        public DateTime dateTime { get; set; }
         public string postTitle { get; set; }
-        public string post { get; set; }
+        public string Content { get; set; }
 
+        public Post (string title, DateTime date, string content)
+        {
+            title = postTitle;
+            dateTime = date;
+            Content = content;
 
+        }
     }
 }

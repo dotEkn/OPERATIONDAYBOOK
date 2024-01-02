@@ -9,12 +9,14 @@ namespace OPERATIONDAYBOOK
 {
     public class PostHanterare
     {
-        static List<Post> postList = new List<Post>();
+        public static List<Post> postList = new List<Post>();
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.
     }
-    static void PostSave()
+    
+    public void SavePost()
     {
-        //StreamWriter
+        //StreamWriter gör så att programmet själv skriver in i filen, så att inte en användare behöver göra det och få åtkomst.
+        //Lite googling så var StreamWriter ett bra sätt att skriva in i fil, då "programmet" är det enda som har åtkomst för att ändra, samt vi.
       /*  savePost(); Denna kommer att ladda filen när programmet startas, om det redan finns sparade inlägg */
       using (StreamWriter writer = new StreamWriter(postSave))
         {
@@ -25,3 +27,4 @@ namespace OPERATIONDAYBOOK
         }
     }
 }
+
