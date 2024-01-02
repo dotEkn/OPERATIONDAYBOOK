@@ -11,6 +11,7 @@ namespace OPERATIONDAYBOOK
     {
         static List<Post> postList = new List<Post>();
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.
+
     }
 
     /*

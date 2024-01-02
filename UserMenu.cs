@@ -18,9 +18,10 @@ public class UserMenu
 		{
             Console.WriteLine("[1] Write a post." +
                 "\n [2] Search for a older post." +
-                "\n [3] Delete an old post.");
+                "\n [3] Delete an old post." +
+                "\n [4] Exit program.");
 
-				menuSelect = Console.ReadLine();
+            menuSelect = Console.ReadLine();
 
             //Try catch system som fångar upp om man skulle skriva fel alternativ så kommer man tillbaka och kan göra rätt.
 
@@ -66,8 +67,11 @@ public class UserMenu
 
                 case 3:
 
-                    return;
+                    break;
 
+                case 4:
+
+                    return;
                 default:
                     break;
             }
