@@ -6,22 +6,44 @@ using System.Threading.Tasks;
 
 namespace OPERATIONDAYBOOK
 {
+
     public class Post
     {
         //Sparar inläggen
-        public int dateTime { get; set; }
-        public string postTitle { get; set; }
-        public string post { get; set; }
+        public DateTime PostDate { get; set; }
+        public string PostTitle { get; set; }
+        public string PostContent { get; set; }
 
-        public void AddPost()
+        public static List<Post> postList = new List<Post>();
+        static string postSave = "posts.txt"; // Filnamnet där posten sparas.
+
+        public Post(string postTitle, DateTime postDate)
+        {
+            PostTitle = postTitle;
+            PostDate = postDate;
+        }
+
+        public static void AddPost()
+
         {
             Console.WriteLine("Titel:");
+            string postTitle = Console.ReadLine();
 
-            postTitle = Console.ReadLine();
+            Console.WriteLine("Enter Datum (MM/DD/YYYY): ");
+            if (DateTime.TryParse(Console.ReadLine(), out DateTime postDate))
+            {
+                Post newPost = new Post(postTitle, postDate);
+                postList.Add(newPost);
 
-            Console.WriteLine("Datum:");
-
-
+                Console.WriteLine("Inlägg tillagt!");
+            }
+            else
+            {
+                Console.WriteLine("Ogiltigt datumformat. Försök igen.");
+            }
         }
+
+
     }
+    
 }

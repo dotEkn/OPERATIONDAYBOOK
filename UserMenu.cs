@@ -58,8 +58,8 @@ public class UserMenu
             switch (menuPick)
             {
                 case 1:
-                    Post AddPost = new Post();
-                    AddPost.AddPost();
+                    Console.WriteLine("Adding a new post...");
+                    Post.AddPost(); // Använd statisk metod från Post-klassen direkt
                     break;
 
                 case 2:
