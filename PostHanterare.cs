@@ -32,7 +32,7 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine($"Datum: {post.PostDate}, Titel: {post.PostTitle}, Innehåll: {post.PostContent}");
             }
         }
-        public void SavedPost(Post content)
+        public void SavedPost(PostContent content)
         {
             listPost.Add(content);
         }

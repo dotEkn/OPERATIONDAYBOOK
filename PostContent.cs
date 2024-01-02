@@ -8,20 +8,22 @@ using System.Threading.Tasks;
 namespace OPERATIONDAYBOOK
 {
 
-    public class Post
+    public class PostContent
     {
         //Sparar inläggen
         public DateTime PostDate { get; set; }
         public string PostTitle { get; set; }
-        public string PostContent { get; set; }
+        public string Content { get; set; }
+        public string BlogPost { get; set; }
 
-        public static List<Post> postList = new List<Post>();
+        public static List<PostContent> postList = new List<PostContent>();
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.
 
-        public Post(string postTitle, DateTime postDate)
+        public PostContent(string postTitle, DateTime postDate, string blogPost)
         {
             PostTitle = postTitle;
             PostDate = postDate;
+            BlogPost = blogPost;
         }
 
         public static void AddPost()
@@ -30,21 +32,37 @@ namespace OPERATIONDAYBOOK
             Console.WriteLine("Titel:");
             string postTitle = Console.ReadLine();
 
-            Console.WriteLine("Enter Datum (MM/DD/YYYY): ");
-            if (DateTime.TryParse(Console.ReadLine(), out DateTime postDate))
+            //whileloop med true som gör att blir det fel så kommer man få nya försök att skriva rätt datum och ej kan lägga in bokstäver.
+            bool dateTimeLoop = true;
+            while (dateTimeLoop)
             {
-                Post newPost = new Post(postTitle, postDate);
+                Console.WriteLine("Skriv Datum (DD/MM/YYYY): ");
+                if (DateTime.TryParse(Console.ReadLine(), out DateTime postDate))
+                {
+                    dateTimeLoop = false;
+                }
+                else
+                {
+                    Console.WriteLine("Ogiltigt datumformat. Var god försök igen.");
+                    dateTimeLoop = true;
+                }
+
+                Console.WriteLine("Skriv ditt inlägg:");
+                string blogPost = Console.ReadLine();
+
+                //Lägger sedan in all info som användaren har skrivit och sparar det i en lista.
+                PostContent newPost = new PostContent(postTitle, postDate, blogPost);
                 postList.Add(newPost);
+            }
 
-                Console.WriteLine("Inlägg tillagt!");
-            }
-            else
-            {
-                Console.WriteLine("Ogiltigt datumformat. Försök igen.");
-            }
+
+
+
         }
-
-
     }
-    
+
+
+
+
+
 }
