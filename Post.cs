@@ -13,6 +13,15 @@ namespace OPERATIONDAYBOOK
         public string postTitle { get; set; }
         public string post { get; set; }
 
+        public void AddPost()
+        {
+            Console.WriteLine("Titel:");
 
+            postTitle = Console.ReadLine();
+
+            Console.WriteLine("Datum:");
+
+
+        }
     }
 }

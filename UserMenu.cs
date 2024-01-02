@@ -16,7 +16,7 @@ public class UserMenu
 
 		while (true)
 		{
-            Console.WriteLine("[1] Write a post." +
+            Console.WriteLine(" [1] Write a post." +
                 "\n [2] Search for a older post." +
                 "\n [3] Delete an old post." +
                 "\n [4] Exit program.");
@@ -58,7 +58,8 @@ public class UserMenu
             switch (menuPick)
             {
                 case 1:
-                    PostHanterare savePost = new PostHanterare();
+                    Post AddPost = new Post();
+                    AddPost.AddPost();
                     break;
 
                 case 2:
