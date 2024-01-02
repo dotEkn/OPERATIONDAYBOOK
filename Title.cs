@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace OPERATIONDAYBOOK
 {
-    public struct Title
+    public class TestList
     {
-        
+        public void UseListPC()
+        {
+            var PCLIST = PostHanterare.postHanterare.GetPostsFromList();
+
+            foreach (var postContent in PCLIST) {
+            Console.WriteLine(postContent);}
+        }
     }
 }

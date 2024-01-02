@@ -10,9 +10,9 @@ namespace OPERATIONDAYBOOK
 
     public class PostHanterare
     {
-        static PostHanterare postHanterare = new PostHanterare();
+        public static PostHanterare postHanterare = new PostHanterare();
 
-        private List<Post> listPost = new List<Post>();
+        private List<PostContent> listPost = new List<PostContent>();
 
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.
 
@@ -29,7 +29,7 @@ namespace OPERATIONDAYBOOK
 
             foreach (var post in sortedPost)
             {
-                Console.WriteLine($"Datum: {post.PostDate}, Titel: {post.PostTitle}, Innehåll: {post.PostContent}");
+                Console.WriteLine($"Datum: {post.PostDate}, Titel: {post.PostTitle}, Innehåll: {post.Content}");
             }
         }
         public void SavedPost(PostContent content)
@@ -61,7 +61,7 @@ namespace OPERATIONDAYBOOK
                 {
                     foreach (var post in postHanterare.GetPostsFromList())
                     {
-                        sw.WriteLine($"{post.PostDate}, {post.PostTitle}, {post.PostContent}");
+                        sw.WriteLine($"{post.PostDate}, {post.PostTitle}, {post.Content}");
                     }
                 }
             }
@@ -70,7 +70,7 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine($"Fel vid sparande till fil: {ex.Message}");
             }
         }
-        public List<Post> GetPostsFromList()
+        public List<PostContent> GetPostsFromList()
         {
             return listPost;
         }
