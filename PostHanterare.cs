@@ -79,7 +79,7 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine("\nInga matchande inlägg hittades.");
             }
         }
-        public void DeletePost()
+        public static void DeletePost()
         {
             //Frågar användaren efter titel på inlägget som ska tas bort. (Måste vara fullständigt titelnamn.)
             Console.WriteLine("\nAnge titel för inlägget du vill ta bort.");
