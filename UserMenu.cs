@@ -18,9 +18,10 @@ public class UserMenu
 		while (true)
 		{
             Console.WriteLine(" [1] Skriv ett inlägg." +
-                "\n [2] Leta efter ett gammalt inlägg." +
-                "\n [3] Radera ett inlägg." +
-                "\n [4] Avsluta program.");
+                "\n [2] Visa gamla inlägg." +
+                "\n [3] Leta efter specifikt inlägg." +
+                "\n [4] Radera inlägg." +
+                "\n [5] Avsluta program.");
 
             menuSelect = Console.ReadLine();
 
@@ -30,11 +31,11 @@ public class UserMenu
                     {
                 if (!int.TryParse(menuSelect, out menuPick))
                 {
-                    throw new FormatException("Tryck mellan 1-4 för att avancera i menyn.");
+                    throw new FormatException("Tryck mellan 1-5 för att avancera i menyn.");
                 }
-                if (menuPick is < 1 or > 4)
+                if (menuPick is < 1 or > 5)
                 {
-                    throw new Exception("Alternativ är mellan 1 till 4.");
+                    throw new Exception("Alternativ är mellan 1 till 5.");
                 }
             }
             catch (ArgumentOutOfRangeException wrongMenu)
@@ -70,10 +71,14 @@ public class UserMenu
                     break;
 
                 case 3:
-
+                    PostHanterare.SearchPostByTitle();
                     break;
 
                 case 4:
+
+                    break;
+
+                case 5:
                     PostHanterare.SavePostToFile();
                     return;
                 default:

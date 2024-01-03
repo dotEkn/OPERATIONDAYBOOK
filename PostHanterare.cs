@@ -69,6 +69,12 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine($"Fel vid sparande till fil: {ex.Message}");
             }
         }
+        public static void SearchPostByTitle()
+        {
+
+        }
+
+
         public List<PostContent> GetPostsFromList()
         {
             return postList;
