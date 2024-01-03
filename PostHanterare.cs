@@ -39,20 +39,12 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine($"\nDatum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
             }
         }
-
-        public static void SearchPost()
-        {
             /*
             * När man söker efter titel, hur "accurate" måste sökningen vara, kan det räcka med att man skriver in 3 bokstäver/siffror och så får man upp resterande
             * inlägg som har dem i sig i titeln, eller måste det bara vara just ETT inlägg som dyker upp? Exempel: Någon skriver in i programmet där dem vill använda
             * ordet 'MAT', så som Matbord, Matråd, Matrecept, Matlista. Då kommer alla komma upp om man inte blir mer specifik, hur mycket påverkar det?.
             */
-                /*
-        * När man söker efter titel, hur "accurate" måste sökningen vara, kan det räcka med att man skriver in 3 bokstäver/siffror och så får man upp resterande
-        * inlägg som har dem i sig i titeln, eller måste det bara vara just ETT inlägg som dyker upp? Exempel: Någon skriver in i programmet där dem vill använda
-        * ordet 'MAT', så som Matbord, Matråd, Matrecept, Matlista. Då kommer alla komma upp om man inte blir mer specifik, hur mycket påverkar det?.
-        */
-        public static void SearchPostByTitle()
+        public static void SearchPost()
         {
             Console.Clear();
             Console.WriteLine("Ange del av titeln för inlägget du vill söka efter:");
@@ -79,7 +71,7 @@ namespace OPERATIONDAYBOOK
                 foreach (var post in matchingPosts)
                 {
                     //Skriver ut datum, titel och innehåll.
-                    Console.WriteLine($"Datum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
+                    Console.WriteLine($"\nDatum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
                 }
             }
             else
