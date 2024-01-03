@@ -32,30 +32,18 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine($"Datum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
             }
         }
+        /*
+         * När man söker efter titel, hur "accurate" måste sökningen vara, kan det räcka med att man skriver in 3 bokstäver/siffror och så får man upp resterande
+         * inlägg som har dem i sig i titeln, eller måste det bara vara just ETT inlägg som dyker upp? Exempel: Någon skriver in i programmet där dem vill använda
+         * ordet 'MAT', så som Matbord, Matråd, Matrecept, Matlista. Då kommer alla komma upp om man inte blir mer specifik, hur mycket påverkar det?.
+         */
         public void SavedPost(PostContent content)
         {
             postList.Add(content);
         }
         public void SearchPost()
         {
-            Console.WriteLine($"\nTest av Sökfunktino");
-            string SearchMatch = Console.ReadLine();
-            var MatchPost = postList.Where(post => post.PostTitle.IndexOf(SearchMatch, StringComparison.OrdinalIgnoreCase) >= 0);
 
-            if (MatchPost.Any())
-            {
-
-
-
-                foreach (var post in MatchPost)
-                {
-                    Console.WriteLine($"Datum: {post.PostDate.ToString("dd/MM/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
-                }
-            }
-            else
-            {
-                Console.WriteLine($"\n Inga matchande inlägg med '{SearchMatch}' hittades.");
-            }
         }
         public void DeletePost()
         {
