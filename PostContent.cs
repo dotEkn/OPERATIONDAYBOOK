@@ -27,12 +27,11 @@ namespace OPERATIONDAYBOOK
         }
 
         public static void AddPost()
-
         {
             Console.WriteLine("Titel:");
             string postTitle = Console.ReadLine();
         
-            //whileloop med true som gör att blir det fel så kommer man få nya försök att skriva rätt datum och ej kan lägga in bokstäver.
+            //whileloop med true som gör att blir det ett fel så kommer man få nytt försök att skriva rätt datum och ej kan exempelvis lägga in bokstäver.
             bool dateTimeLoop = true;
             while (dateTimeLoop)
             {
@@ -44,7 +43,7 @@ namespace OPERATIONDAYBOOK
                     Console.WriteLine("Skriv ditt inlägg:");
                     string blogPost = Console.ReadLine();
 
-                    //Lägger sedan in all info som användaren har skrivit och sparar det i en lista.
+                    //Lägger sedan in all info som användaren har skrivit och sparar det i en lista (postList).
                     PostContent newPost = new PostContent(postTitle, postDate, blogPost);
                     postList.Add(newPost);
                 }
@@ -56,10 +55,6 @@ namespace OPERATIONDAYBOOK
 
                
             }
-
-            
-
-
         }
     }
 

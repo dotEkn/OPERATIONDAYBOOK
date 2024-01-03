@@ -60,26 +60,28 @@ public class UserMenu
             switch (menuPick)
             {
                 case 1:
-                    
-                    PostContent.AddPost(); // Använder postcontent klassen som tar hand om att lägga till textfil när man trycker på alternativ 1.
+                    // Använder postcontent klassen som tar hand om att lägga till textfil när man trycker på alternativ 1.
+                    PostContent.AddPost();
                     break;
 
                 case 2:
-
-                    PostHanterare.SavePostToFile();
+                    // Använder PostHanterare klassen som visar alla inlägg man gjort om man trycker på alternativ 2.
+                    PostHanterare.ShowPost();
 
                     break;
 
                 case 3:
-                    PostHanterare.SearchPostByTitle();
+                    // Använder PostHanterare klassen som visar inlägg man vill söka på om man trycker på alternativ 3.
+                    PostHanterare.SearchPost();
                     break;
 
                 case 4:
-
+                    // Använder PostHanterare klassen som raderar inlägg.
+                    PostHanterare.DeletePost();
                     break;
 
                 case 5:
-
+                    // Använder PostHanterare klassen som sparar alla inlägg man skrivit i ett textdokument.
                     PostHanterare.SavePostToFile();
                     return;
 
