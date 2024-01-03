@@ -69,11 +69,34 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine($"Fel vid sparande till fil: {ex.Message}");
             }
         }
+
         public static void SearchPostByTitle()
         {
+            Console.WriteLine("Ange del av titeln för inlägget du vill söka efter:");
+            string searchTerm = Console.ReadLine();
 
+            List<PostContent> matchingPosts = new List<PostContent>();
+            foreach (var post in postList)
+            {
+                if (post.PostTitle.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    matchingPosts.Add(post);
+                }
+            }
+
+            if (matchingPosts.Count > 0)
+            {
+                Console.WriteLine("Matchande inlägg:");
+                foreach (var post in matchingPosts)
+                {
+                    Console.WriteLine($"Datum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Inga matchande inlägg hittades.");
+            }
         }
-
 
         public List<PostContent> GetPostsFromList()
         {
