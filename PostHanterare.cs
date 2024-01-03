@@ -18,23 +18,21 @@ namespace OPERATIONDAYBOOK
 
         public static void ShowPost()
         {
+            Console.Clear();
+
             if (postList.Count == 0)
             {
-                Console.WriteLine("\nInga inlägg att visa.");
+                Console.WriteLine("Inga inlägg att visa.");
                 return;
             }
-            Console.WriteLine("\nAlla inlägg (nyast först): ");
+            Console.WriteLine("Alla inlägg (nyast först): ");
 
             var sortedPost = postList.OrderByDescending(i => i.PostDate);
 
             foreach (var post in sortedPost)
             {
-                Console.WriteLine($"Datum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
+                Console.WriteLine($"\nDatum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
             }
-        }
-        public void SavedPost(PostContent content)
-        {
-            postList.Add(content);
         }
                 /*
         * När man söker efter titel, hur "accurate" måste sökningen vara, kan det räcka med att man skriver in 3 bokstäver/siffror och så får man upp resterande
@@ -43,6 +41,7 @@ namespace OPERATIONDAYBOOK
         */
         public static void SearchPostByTitle()
         {
+            Console.Clear();
             Console.WriteLine("Ange del av titeln för inlägget du vill söka efter:");
             string SearchMatch = Console.ReadLine();
 
@@ -57,20 +56,24 @@ namespace OPERATIONDAYBOOK
 
             if (matchingPosts.Count > 0)
             {
-                Console.WriteLine("Matchande inlägg:");
+                Console.WriteLine("\nMatchande inlägg:");
                 foreach (var post in matchingPosts)
                 {
-                    Console.WriteLine($"Datum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
+                    Console.WriteLine($"\nDatum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
                 }
             }
             else
             {
-                Console.WriteLine("Inga matchande inlägg hittades.");
+                Console.WriteLine("\nInga matchande inlägg hittades.");
             }
         }
-        public void DeletePost()
+
+
+        public static void DeletePost()
         {
-            Console.WriteLine("\nAnge titel för inlägget du vill ta bort.");
+            Console.Clear();
+
+            Console.WriteLine("\nAnge titel för inlägget du vill ta bort. Titelnamnet måste vara precist.");
             string PostDelete = Console.ReadLine();
 
             var deletePost = postList.FirstOrDefault(PostContent => PostContent.PostTitle.Equals(PostDelete, StringComparison.OrdinalIgnoreCase));
@@ -78,18 +81,18 @@ namespace OPERATIONDAYBOOK
             if (PostDelete != null)
             {
                 postList.Remove(deletePost);
-                Console.WriteLine("Inlägget har tagits bort.");
+                Console.WriteLine("\nInlägget har tagits bort.");
             }
             else
             {
-                Console.WriteLine("Inlägget kunde inte hittas.");
+                Console.WriteLine("\nInlägget kunde inte hittas.");
             }
         }
         public static void SavePostToFile()
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter(postSave))
+                using (StreamWriter sw = new StreamWriter(postSave, true))
                 {
                     foreach (var post in postHanterare.GetPostsFromList())
                     {
@@ -99,7 +102,7 @@ namespace OPERATIONDAYBOOK
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Fel vid sparande till fil: {ex.Message}");
+                Console.WriteLine($"\nFel vid sparande till fil: {ex.Message}");
             }
         }
 

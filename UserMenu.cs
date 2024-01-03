@@ -17,7 +17,7 @@ public class UserMenu
 
 		while (true)
 		{
-            Console.WriteLine(" [1] Skriv ett inlägg." +
+            Console.WriteLine("\n [1] Skriv ett inlägg." +
                 "\n [2] Visa gamla inlägg." +
                 "\n [3] Leta efter specifikt inlägg." +
                 "\n [4] Radera inlägg." +
@@ -65,17 +65,19 @@ public class UserMenu
                     break;
 
                 case 2:
-
-                    PostHanterare.SavePostToFile();
-
+                    
+                    PostHanterare.ShowPost();
+                    
                     break;
 
                 case 3:
+                    
                     PostHanterare.SearchPostByTitle();
                     break;
 
                 case 4:
-
+                    
+                    PostHanterare.DeletePost();
                     break;
 
                 case 5:
