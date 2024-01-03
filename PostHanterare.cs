@@ -15,6 +15,7 @@ namespace OPERATIONDAYBOOK
         public static List<PostContent> postList = PostContent.postList;
         static string postSave = "posts.txt"; // Filnamnet där posten sparas.
 
+
         public static void ShowPost()
         {
             if (postList.Count == 0)
@@ -23,7 +24,7 @@ namespace OPERATIONDAYBOOK
                 return;
             }
             Console.WriteLine("\nAlla inlägg (nyast först): ");
-            
+
             var sortedPost = postList.OrderByDescending(i => i.PostDate);
 
             foreach (var post in sortedPost)
@@ -34,6 +35,27 @@ namespace OPERATIONDAYBOOK
         public void SavedPost(PostContent content)
         {
             postList.Add(content);
+        }
+        public void SearchPost()
+        {
+            Console.WriteLine($"\nTest av Sökfunktino");
+            string SearchMatch = Console.ReadLine();
+            var MatchPost = postList.Where(post => post.PostTitle.IndexOf(SearchMatch, StringComparison.OrdinalIgnoreCase) >= 0);
+
+            if (MatchPost.Any())
+            {
+
+
+
+                foreach (var post in MatchPost)
+                {
+                    Console.WriteLine($"Datum: {post.PostDate.ToString("dd/MM/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"\n Inga matchande inlägg med '{SearchMatch}' hittades.");
+            }
         }
         public void DeletePost()
         {

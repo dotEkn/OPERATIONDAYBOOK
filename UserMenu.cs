@@ -32,7 +32,7 @@ public class UserMenu
                 {
                     throw new FormatException("Tryck mellan 1-4 för att avancera i menyn.");
                 }
-                if (menuPick is < 1 or > 4)
+                if (menuPick is < 1 or > 5)
                 {
                     throw new Exception("Alternativ är mellan 1 till 4.");
                 }
