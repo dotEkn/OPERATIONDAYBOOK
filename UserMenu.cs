@@ -66,7 +66,7 @@ public class UserMenu
 
                 case 2:
 
-                    PostHanterare.ShowPost();
+                    PostHanterare.SavePostToFile();
 
                     break;
 
