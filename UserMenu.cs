@@ -79,8 +79,10 @@ public class UserMenu
                     break;
 
                 case 5:
+
                     PostHanterare.SavePostToFile();
                     return;
+
                 default:
                     break;
             }
