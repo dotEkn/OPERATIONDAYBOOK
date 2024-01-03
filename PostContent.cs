@@ -29,7 +29,7 @@ namespace OPERATIONDAYBOOK
         public static void AddPost()
         {
             Console.Clear();
-            Console.WriteLine("Lägg till ett inlägg.");
+            Console.WriteLine("\nLägg till ett inlägg.");
 
             Console.WriteLine("\nTitel:");
             string postTitle = Console.ReadLine();

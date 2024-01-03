@@ -25,10 +25,10 @@ namespace OPERATIONDAYBOOK
             //If-sats som ska visa inlägg om det finns mer än 1 inlägg sparat annars ger den felmeddelande att inga inlägg finns att visa.
             if (postList.Count == 0)
             {
-                Console.WriteLine("Inga inlägg att visa.");
+                Console.WriteLine("\nInga inlägg att visa.");
                 return;
             }
-            Console.WriteLine("Alla inlägg (nyast först): ");
+            Console.WriteLine("\nAlla inlägg (nyast först): ");
 
             //Här sorteras inläggen efter datum ordning.
             var sortedPost = postList.OrderByDescending(i => i.PostDate);
@@ -36,7 +36,7 @@ namespace OPERATIONDAYBOOK
             //Presenteras inlägget som man har skrivit med datum, titel och innehåll.
             foreach (var post in sortedPost)
             {
-                Console.WriteLine($"\nDatum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
+                Console.WriteLine($"\nDatum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle} \nInnehåll: {post.BlogPost}");
             }
         }
             /*
@@ -47,7 +47,7 @@ namespace OPERATIONDAYBOOK
         public static void SearchPost()
         {
             Console.Clear();
-            Console.WriteLine("Ange del av titeln för inlägget du vill söka efter:");
+            Console.WriteLine("\nAnge del av titeln för inlägget du vill söka efter:");
             string SearchMatch = Console.ReadLine();
 
             //Skapar en lista för att lagra matchande inlägg.
@@ -71,7 +71,7 @@ namespace OPERATIONDAYBOOK
                 foreach (var post in matchingPosts)
                 {
                     //Skriver ut datum, titel och innehåll.
-                    Console.WriteLine($"\nDatum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
+                    Console.WriteLine($"\nDatum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle} \nInnehåll: {post.BlogPost}");
                 }
             }
             else
@@ -82,7 +82,6 @@ namespace OPERATIONDAYBOOK
         public static void DeletePost()
         {
             //Frågar användaren efter titel på inlägget som ska tas bort. (Måste vara fullständigt titelnamn.)
-            Console.WriteLine("\nAnge titel för inlägget du vill ta bort.");
             Console.Clear();
 
             Console.WriteLine("\nAnge titel för inlägget du vill ta bort. Titelnamnet måste vara precist.");
