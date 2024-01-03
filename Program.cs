@@ -8,7 +8,6 @@ namespace OPERATIONDAYBOOK
 {
     public class Program
     {
-        
         static void Main(string[] args)
         {
             //Kör menyn när man ska starta programmet.
