@@ -29,7 +29,7 @@ namespace OPERATIONDAYBOOK
 
             foreach (var post in sortedPost)
             {
-                Console.WriteLine($"Datum: {post.PostDate.ToString("dd/MM/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
+                Console.WriteLine($"Datum: {post.PostDate.ToString("MM/dd/yyyy")}, Titel: {post.PostTitle}, Innehåll: {post.BlogPost}");
             }
         }
         public void SavedPost(PostContent content)
@@ -82,7 +82,7 @@ namespace OPERATIONDAYBOOK
                 {
                     foreach (var post in postHanterare.GetPostsFromList())
                     {
-                        sw.WriteLine($"{post.PostDate.ToString("dd/MM/yyyy")}, {post.PostTitle}, {post.BlogPost}");
+                        sw.WriteLine($"{post.PostDate.ToString("MM/dd/yyyy")}, {post.PostTitle}, {post.BlogPost}");
                     }
                 }
             }
@@ -91,6 +91,12 @@ namespace OPERATIONDAYBOOK
                 Console.WriteLine($"Fel vid sparande till fil: {ex.Message}");
             }
         }
+        public static void SearchPostByTitle()
+        {
+
+        }
+
+
         public List<PostContent> GetPostsFromList()
         {
             return postList;
