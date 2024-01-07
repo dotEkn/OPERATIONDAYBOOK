@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace OPERATIONDAYBOOK
 {
 
-    public class PostHanterare
+    public class PostManager
     {
         //Här skapas lista som sparar alla inlägg man skrivit.
-        public static PostHanterare postHanterare = new PostHanterare();
+        public static PostManager postHanterare = new PostManager();
 
         public static List<PostContent> postList = PostContent.postList;
         //Skapas en textfil.

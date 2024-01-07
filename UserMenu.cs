@@ -66,23 +66,23 @@ public class UserMenu
 
                 case 2:
                     // Använder PostHanterare klassen som visar alla inlägg man gjort om man trycker på alternativ 2.
-                    PostHanterare.ShowPost();
+                    PostManager.ShowPost();
 
                     break;
 
                 case 3:
                     // Använder PostHanterare klassen som visar inlägg man vill söka på om man trycker på alternativ 3.
-                    PostHanterare.SearchPost();
+                    PostManager.SearchPost();
                     break;
 
                 case 4:
                     // Använder PostHanterare klassen som raderar inlägg.
-                    PostHanterare.DeletePost();
+                    PostManager.DeletePost();
                     break;
 
                 case 5:
                     // Använder PostHanterare klassen som sparar alla inlägg man skrivit i ett textdokument.
-                    PostHanterare.SavePostToFile();
+                    PostManager.SavePostToFile();
                     return;
 
                 default:

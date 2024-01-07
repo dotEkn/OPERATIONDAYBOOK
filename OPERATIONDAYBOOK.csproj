@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PostContent.cs" />
-    <Compile Include="PostHanterare.cs" />
+    <Compile Include="PostManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserMenu.cs" />
