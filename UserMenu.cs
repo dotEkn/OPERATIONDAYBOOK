@@ -8,7 +8,7 @@ public class UserMenu
 
 	}
 
-    public void menuSelect()
+    public void MenuSelect()
 	{
 
 		//While loop som visar menu, menyn återkommer efter man fullbordat något av alternativen.

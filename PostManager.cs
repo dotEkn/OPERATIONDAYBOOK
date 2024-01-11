@@ -48,7 +48,7 @@ namespace OPERATIONDAYBOOK
         {
             Console.Clear();
             Console.WriteLine("\nAnge del av titeln för inlägget du vill söka efter:");
-            string SearchMatch = Console.ReadLine();
+            string searchMatch = Console.ReadLine();
 
             //Skapar en lista för att lagra matchande inlägg.
             List<PostContent> matchingPosts = new List<PostContent>();
@@ -58,7 +58,7 @@ namespace OPERATIONDAYBOOK
             {
                 // Använd IndexOf för att söka efter delar av titeln som matchar söktermen
                 // StringComparison.OrdinalIgnoreCase gör att sökningen är case-insensitive.
-                if (post.PostTitle.IndexOf(SearchMatch, StringComparison.OrdinalIgnoreCase) >= 0)
+                if (post.PostTitle.IndexOf(searchMatch, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     //Om titel innehåller sökterm så lägg till det inlägget i listan av matchade inlägg.
                     matchingPosts.Add(post);
@@ -85,13 +85,13 @@ namespace OPERATIONDAYBOOK
             Console.Clear();
 
             Console.WriteLine("\nAnge titel för inlägget du vill ta bort. Titelnamnet måste vara precist.");
-            string PostDelete = Console.ReadLine();
+            string postDelete = Console.ReadLine();
 
             // Sök efter det första inlägget med den angivna titeln i listan av inlägg. (postList)
-            var deletePost = postList.FirstOrDefault(PostContent => PostContent.PostTitle.Equals(PostDelete, StringComparison.OrdinalIgnoreCase));
+            var deletePost = postList.FirstOrDefault(postContent => postContent.PostTitle.Equals(postDelete, StringComparison.OrdinalIgnoreCase));
 
             //IF-Sats Om inlägg hittades med rätt titel.
-            if (PostDelete != null)
+            if (postDelete != null)
             {
                 //Tas inlägget bort.
                 postList.Remove(deletePost);
